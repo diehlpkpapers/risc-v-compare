@@ -1,0 +1,117 @@
+Source: wget https://www.nas.nasa.gov/assets/npb/NPB3.4.2.tar.gz
+
+
+Tools Versions 
+OpenMPI -   4.0.3
+gfortran - 9.4.0
+
+Flags:
+MPIFC = mpif90
+FFLAGS = -o3
+MPICC = mpicc
+CFLAGS  = -O3
+
+
+Benchmark runs 
+CG class A
+ CG Benchmark Completed.
+ Class           =                        A
+ Size            =                    14000
+ Iterations      =                       15
+ Time in seconds =                     8.27
+ Total processes =                        2
+ Active processes=                        2
+ Mop/s total     =                   180.91
+ Mop/s/process   =                    90.46
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 2025
+
+
+
+
+ EP Benchmark Completed.
+ Class           =                        A
+ Size            =                536870912
+ Iterations      =                        0
+ Time in seconds =                    54.72
+ Total processes =                        2
+ Active processes=                        2
+ Mop/s total     =                     9.81
+ Mop/s/process   =                     4.91
+ Operation type  = Random numbers generated
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 2025
+
+
+
+
+ IS Benchmark Completed
+ Class           =                        B
+ Size            =                 33554432
+ Iterations      =                       10
+ Time in seconds =                    23.36
+ Total processes =                        2
+ Active processes=                        2
+ Mop/s total     =                    14.37
+ Mop/s/process   =                     7.18
+ Operation type  =              keys ranked
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 2025
+
+
+
+
+ FT Benchmark Completed.
+ Class           =                        A
+ Size            =            256x 256x 128
+ Iterations      =                        6
+ Time in seconds =                    42.96
+ Total processes =                        2
+ Active processes=                        2
+ Mop/s total     =                   166.12
+ Mop/s/process   =                    83.06
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 2025
+
+
+
+
+ MG Benchmark Completed.
+ Class           =                        A
+ Size            =            256x 256x 256
+ Iterations      =                        4
+ Time in seconds =                    21.77
+ Total processes =                        2
+ Active processes=                        2
+ Mop/s total     =                   178.75
+ Mop/s/process   =                    89.38
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 2025
+
+
+
+ SP Benchmark Completed.
+ Class           =                        A
+ Size            =             64x  64x  64
+ Iterations      =                      400
+ Time in seconds =                   204.47
+ Total processes =                        4
+ Active processes=                        4
+ Mop/s total     =                   415.76
+ Mop/s/process   =                   103.94
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 2025
+
+
+
+

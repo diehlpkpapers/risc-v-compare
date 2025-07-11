@@ -10,7 +10,7 @@
 
 module load openmpi
 
-for exe in cd ep is ft mg sp
+for exe in cg ep is ft mg sp
 do
   for c in A B C D 
   do

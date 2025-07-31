@@ -1,0 +1,80 @@
+CCa/
+_ticks: 37
+CCe/
+_ticks: 65
+CCh/
+_ticks: 879
+CCh_st/
+_ticks: 68
+CCl/
+_ticks: 77
+CCm/
+_ticks: 42
+CF1/
+_ticks: 22
+CRd/
+_ticks: 58761
+CRf/
+_ticks: 113
+CRm/
+Segmentation fault (core dumped)
+CS1/
+_ticks: 7
+CS3/
+_ticks: 68
+DP1d/
+_ticks: 471
+DP1f/
+_ticks: 215
+DPT/
+_ticks: 176
+DPTd/
+_ticks: 78
+DPcvt/
+_ticks: 60
+ED1/
+_ticks: 17
+EF/
+_ticks: 27
+EI/
+_ticks: 22
+EM1/
+_ticks: 14
+EM5/
+_ticks: 57
+MC/
+_ticks: 826
+MCS/
+_ticks: 1191
+MD/
+_ticks: 73
+MI/
+_ticks: 110
+MIM/
+_ticks: 114
+MIM2/
+_ticks: 113
+MIP/
+_ticks: 95
+ML2/
+_ticks: 1283
+ML2_BW_ld/
+_ticks: 874
+ML2_BW_ldst/
+_ticks: 3989
+ML2_BW_st/
+_ticks: 2114
+ML2_st/
+_ticks: 6048
+MM/
+_ticks: 4833
+MM_st/
+_ticks: 4709
+M_Dyn/
+_ticks: 382
+STL2/
+_ticks: 1560
+STL2b/
+_ticks: 2296
+STc/
+_ticks: 48

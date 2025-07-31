@@ -1,0 +1,81 @@
+for dir in */; do if [ -d "$dir" ]; then echo $dir; cd $dir; ./bench.RISCV; cd ..; fi; done
+CCa/
+_ticks: 21
+CCe/
+_ticks: 31
+CCh/
+_ticks: 710
+CCh_st/
+_ticks: 52
+CCl/
+_ticks: 42
+CCm/
+_ticks: 22
+CF1/
+_ticks: 22
+CRd/
+_ticks: 37062
+CRf/
+_ticks: 76
+CRm/
+Segmentation fault (core dumped)
+CS1/
+_ticks: 5
+CS3/
+_ticks: 58
+DP1d/
+_ticks: 412
+DP1f/
+_ticks: 184
+DPcvt/
+_ticks: 55
+DPT/
+_ticks: 139
+DPTd/
+_ticks: 61
+ED1/
+_ticks: 10
+EF/
+_ticks: 17
+EI/
+_ticks: 17
+EM1/
+_ticks: 8
+EM5/
+_ticks: 17
+MC/
+_ticks: 199
+MCS/
+_ticks: 1715
+MD/
+_ticks: 39
+M_Dyn/
+_ticks: 382
+MI/
+_ticks: 83
+MIM/
+_ticks: 238
+MIM2/
+_ticks: 231
+MIP/
+_ticks: 121
+ML2/
+_ticks: 1829
+ML2_BW_ld/
+_ticks: 1213
+ML2_BW_ldst/
+_ticks: 7081
+ML2_BW_st/
+_ticks: 2415
+ML2_st/
+_ticks: 11319
+MM/
+_ticks: 1511
+MM_st/
+_ticks: 1689
+STc/
+_ticks: 30
+STL2/
+_ticks: 1355
+STL2b/
+_ticks: 5745

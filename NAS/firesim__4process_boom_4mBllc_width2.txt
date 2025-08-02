@@ -1,0 +1,52 @@
+CG Benchmark Completed.
+ Class           =                        A
+ Size            =                    14000
+ Iterations      =                       15
+ Time in seconds =                     5.44
+ Total processes =                        4
+ Active processes=                        4
+ Mop/s total     =                   275.03
+
+
+ EP Benchmark Completed.
+ Class           =                        A
+ Size            =                536870912
+ Iterations      =                        0
+ Time in seconds =                     6.57
+ Total processes =                        4
+ Active processes=                        4
+ Mop/s total     =                    81.72
+ Mop/s/process   =                    20.43
+ Operation type  = Random numbers generated
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 202
+
+IS Benchmark Completed
+ Class           =                        A
+ Size            =                  8388608
+ Iterations      =                       10
+ Time in seconds =                     1.58
+ Total processes =                        4
+ Active processes=                        4
+ Mop/s total     =                    53.01
+ Mop/s/process   =                    13.25
+ Operation type  =              keys ranked
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              11 Jul 2025
+
+MG Benchmark Completed.
+ Class           =                        A
+ Size            =            256x 256x 256
+ Iterations      =                        4
+ Time in seconds =                     9.36
+ Total processes =                        4
+ Active processes=                        4
+ Mop/s total     =                   415.74
+ Mop/s/process   =                   103.94
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 202
+

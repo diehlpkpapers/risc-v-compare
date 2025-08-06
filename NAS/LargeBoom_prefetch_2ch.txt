@@ -1,0 +1,51 @@
+ CG Benchmark Completed.
+ Class           =                        A
+ Size            =                    14000
+ Iterations      =                       15
+ Time in seconds =                     6.69
+ Total processes =                        1
+ Active processes=                        1
+ Mop/s total     =                   223.61
+ Mop/s/process   =                   223.61
+
+ EP Benchmark Completed.
+ Class           =                        A
+ Size            =                536870912
+ Iterations      =                        0
+ Time in seconds =                    15.84
+ Total processes =                        1
+ Active processes=                        1
+ Mop/s total     =                    33.90
+ Mop/s/process   =                    33.90
+ Operation type  = Random numbers generated
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 2025
+
+ IS Benchmark Completed
+ Class           =                        A
+ Size            =                  8388608
+ Iterations      =                       10
+ Time in seconds =                     2.43
+ Total processes =                        1
+ Active processes=                        1
+ Mop/s total     =                    34.49
+ Mop/s/process   =                    34.49
+ Operation type  =              keys ranked
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              11 Jul 2025
+
+ MG Benchmark Completed.
+ Class           =                        A
+ Size            =            256x 256x 256
+ Iterations      =                        4
+ Time in seconds =                    10.96
+ Total processes =                        1
+ Active processes=                        1
+ Mop/s total     =                   355.09
+ Mop/s/process   =                   355.09
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 2025

@@ -1,0 +1,134 @@
+[diehlpk@sven0 bench]$ mpirun -np 4 --oversubscribe ../build/lmp -i in.chain  
+LAMMPS (12 Jun 2025 - Development - patch_12Jun2025-833-g0a6b13ff0b)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread.
+  using 1 OpenMP thread(s) per MPI task
+Reading data file ...
+  orthogonal box = (-16.796 -16.796 -16.796) to (16.796 16.796 16.796)
+  1 by 2 by 2 MPI processor grid
+  reading atoms ...
+  32000 atoms
+  reading velocities ...
+  32000 velocities
+  scanning bonds ...
+  1 = max bonds/atom
+  orthogonal box = (-16.796 -16.796 -16.796) to (16.796 16.796 16.796)
+  1 by 2 by 2 MPI processor grid
+  reading bonds ...
+  31680 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0        1        1       
+  special bond factors coul:  0        1        1       
+     2 = max # of 1-2 neighbors
+     2 = max # of special neighbors
+  special bonds CPU = 0.005 seconds
+  read_data CPU = 1.158 seconds
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+WARNING: Communication cutoff 1.52 is shorter than a bond length based estimate of 1.855. This may lead to errors. (src/comm.cpp:743)
+Neighbor list info ...
+  update: every = 1 steps, delay = 1 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 1.52
+  ghost atom cutoff = 1.52
+  binsize = 0.76, bins = 45 45 45
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.012
+WARNING: Communication cutoff 1.52 is shorter than a bond length based estimate of 1.855. This may lead to errors. (src/comm.cpp:743)
+Per MPI rank memory allocation (min/avg/max) = 4.779 | 4.78 | 4.78 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   0.97029772     0.44484087     20.494523      22.394765      4.6721833    
+       100   0.97145835     0.43803883     20.502691      22.397872      4.626988     
+Loop time of 0.727005 on 4 procs for 100 steps with 32000 atoms
+
+Performance: 142612.578 tau/day, 137.551 timesteps/s, 4.402 Matom-step/s
+92.5% CPU use with 4 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.15472    | 0.16063    | 0.16768    |   1.2 | 22.09
+Bond    | 0.068326   | 0.070073   | 0.072148   |   0.5 |  9.64
+Neigh   | 0.30908    | 0.30965    | 0.30991    |   0.1 | 42.59
+Comm    | 0.062097   | 0.072512   | 0.081181   |   2.5 |  9.97
+Output  | 0.00044386 | 0.00050098 | 0.00053528 |   0.0 |  0.07
+Modify  | 0.081688   | 0.082441   | 0.083192   |   0.2 | 11.34
+Other   |            | 0.0312     |            |       |  4.29
+
+Nlocal:           8000 ave        8030 max        7974 min
+Histogram: 1 0 0 1 0 1 0 0 0 1
+Nghost:           4177 ave        4191 max        4160 min
+Histogram: 1 0 0 0 1 0 0 1 0 1
+Neighs:        38995.8 ave       39169 max       38852 min
+Histogram: 1 0 0 1 1 0 0 0 0 1
+
+Total # of neighbors = 155983
+Ave neighs/atom = 4.8744688
+Ave special neighs/atom = 1.98
+Neighbor list builds = 25
+Dangerous builds = 0
+Total wall time: 0:00:01
+[diehlpk@sven0 bench]$ mpirun -np 4 --oversubscribe ../build/lmp -i in.lj  
+LAMMPS (12 Jun 2025 - Development - patch_12Jun2025-833-g0a6b13ff0b)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread.
+  using 1 OpenMP thread(s) per MPI task
+Lattice spacing in x,y,z = 1.6795962 1.6795962 1.6795962
+Created orthogonal box = (0 0 0) to (33.591924 33.591924 33.591924)
+  1 by 2 by 2 MPI processor grid
+Created 32000 atoms
+  using lattice units in orthogonal box = (0 0 0) to (33.591924 33.591924 33.591924)
+  create_atoms CPU = 0.003 seconds
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 20 steps, delay = 0 steps, check = no
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 2.8
+  ghost atom cutoff = 2.8
+  binsize = 1.4, bins = 24 24 24
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.005
+Per MPI rank memory allocation (min/avg/max) = 5.881 | 5.881 | 5.881 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   1.44          -6.7733681      0             -4.6134356     -5.0197073    
+       100   0.76087792    -5.7635991      0             -4.6223179      0.18609556   
+Loop time of 1.26462 on 4 procs for 100 steps with 32000 atoms
+
+Performance: 34160.538 tau/day, 79.075 timesteps/s, 2.530 Matom-step/s
+95.9% CPU use with 4 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.99222    | 1.01       | 1.0224     |   1.1 | 79.87
+Neigh   | 0.1399     | 0.14221    | 0.14441    |   0.5 | 11.25
+Comm    | 0.066004   | 0.080729   | 0.097656   |   4.0 |  6.38
+Output  | 0.0005618  | 0.0005791  | 0.00062268 |   0.0 |  0.05
+Modify  | 0.023898   | 0.023949   | 0.024028   |   0.0 |  1.89
+Other   |            | 0.007134   |            |       |  0.56
+
+Nlocal:           8000 ave        8013 max        7979 min
+Histogram: 1 0 0 0 0 1 0 0 0 2
+Nghost:         9009.5 ave        9033 max        8996 min
+Histogram: 1 0 2 0 0 0 0 0 0 1
+Neighs:         300440 ave      301729 max      298544 min
+Histogram: 1 0 0 0 0 0 1 1 0 1
+
+Total # of neighbors = 1201758
+Ave neighs/atom = 37.554938
+Neighbor list builds = 5
+Dangerous builds not checked
+Total wall time: 0:00:01

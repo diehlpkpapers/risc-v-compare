@@ -1,0 +1,58 @@
+ubuntu@ubuntu:~/lammps/bench$ cat p2_lj.log
+LAMMPS (12 Jun 2025 - Development - patch_12Jun2025-833-g0a6b13ff0b)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread.
+  using 1 OpenMP thread(s) per MPI task
+Lattice spacing in x,y,z = 1.6795962 1.6795962 1.6795962
+Created orthogonal box = (0 0 0) to (33.591924 33.591924 33.591924)
+  1 by 1 by 2 MPI processor grid
+Created 32000 atoms
+  using lattice units in orthogonal box = (0 0 0) to (33.591924 33.591924 33.591924)
+  create_atoms CPU = 0.034 seconds
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 20 steps, delay = 0 steps, check = no
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 2.8
+  ghost atom cutoff = 2.8
+  binsize = 1.4, bins = 24 24 24
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.005
+Per MPI rank memory allocation (min/avg/max) = 7.885 | 7.885 | 7.885 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   1.44          -6.7733681      0             -4.6134356     -5.0197073    
+       100   0.76087792    -5.7635991      0             -4.6223179      0.18609556   
+Loop time of 27.5064 on 2 procs for 100 steps with 32000 atoms
+
+Performance: 1570.543 tau/day, 3.636 timesteps/s, 116.337 katom-step/s
+99.7% CPU use with 2 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 23.915     | 23.951     | 23.987     |   0.7 | 87.07
+Neigh   | 1.879      | 1.8917     | 1.9045     |   0.9 |  6.88
+Comm    | 0.53803    | 0.56276    | 0.58749    |   3.3 |  2.05
+Output  | 0.0025944  | 0.0026356  | 0.0026769  |   0.1 |  0.01
+Modify  | 1.0347     | 1.0368     | 1.0388     |   0.2 |  3.77
+Other   |            | 0.06146    |            |       |  0.22
+
+Nlocal:          16000 ave       16024 max       15976 min
+Histogram: 1 0 0 0 0 0 0 0 0 1
+Nghost:          13657 ave       13669 max       13645 min
+Histogram: 1 0 0 0 0 0 0 0 0 1
+Neighs:         600879 ave      602727 max      599031 min
+Histogram: 1 0 0 0 0 0 0 0 0 1
+
+Total # of neighbors = 1201758
+Ave neighs/atom = 37.554938
+Neighbor list builds = 5
+Dangerous builds not checked
+Total wall time: 0:00:28

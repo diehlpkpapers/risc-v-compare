@@ -1,4 +1,4 @@
-Description,Category,Benchmark,Small BOOM,Medium BOOM,Large BOOM,Banana Pi FireSim,MILK-V FireSim,Banana Pi,MILK-V
+﻿Description,Category,Benchmark,Small BOOM,Medium BOOM,Large BOOM,Banana Pi FireSim,MILK-V FireSim,Banana Pi,MILK-V
 Completely Biased Branch,Control Flow,Cca,25,17,17,37,16,21,17
 Easy to predict Control Flow (alternating branches),Control Flow,Cce,38,21,15,65,17,31,18
 Random Control Flow -- Impossible to predict,Control Flow,CCh,936,757,653,879,644,710,606
@@ -33,9 +33,9 @@ L2 Resident linked list traversal -- B/W limited (loads),Cache,ML2_BW_ld,564,400
 L2 Resident linked-list traversal -- B/W Limited (load/stores),Cache,ML2_BW_ldst,3113,3003,2562,3989,1863,7081,2080
 L2 resident linked list traversal -- B/W limited (stores),Cache,ML2_BW_st,1964,4499,1888,2114,1518,2415,1408
 L2 resident linked list traversal (stores),Cache,ML2_st,3531,6212,3162,6048,2835,11319,4227
-Non-cache resident linked-list traversal,Memory,MM,6153,10365,6245,4833,3205,1511,1391
-Non-cache resident linked-list traversal (with stores),Memory,MM_st,7941,12603,7551,4709,2997,1689,843
-Load Store Access with Differeing dynamic dependences,Memory,M_Dyn,373,389,301,382,235,382,254
 "Repeatedly store, L2 Cache Resident",Cache,STL2,1787,5934,1386,1560,936,1355,1194
 "Repeatedly Store, L2 Resident (occasional stores)",Cache,STL2b,1740,5754,1252,2296,1221,5745,1101
 Repeatedly Store in consecutive access - L1 Cache,Cache,STc,39,24,15,48,16,30,27
+Non-cache resident linked-list traversal,Memory,MM,6153,10365,6245,4833,3205,1511,1391
+Non-cache resident linked-list traversal (with stores),Memory,MM_st,7941,12603,7551,4709,2997,1689,843
+Load Store Access with Differeing dynamic dependences,Memory,M_Dyn,373,389,301,382,235,382,254

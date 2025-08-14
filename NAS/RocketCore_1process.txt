@@ -1,0 +1,57 @@
+ CG Benchmark Completed.
+ Class           =                        A
+ Size            =                    14000
+ Iterations      =                       15
+ Time in seconds =                    22.92
+ Total processes =                        1
+ Active processes=                        1
+ Mop/s total     =                    65.29
+ Mop/s/process   =                    65.29
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 2025
+
+ EP Benchmark Completed.
+ Class           =                        A
+ Size            =                536870912
+ Iterations      =                        0
+ Time in seconds =                    48.83
+ Total processes =                        1
+ Active processes=                        1
+ Mop/s total     =                    10.99
+ Mop/s/process   =                    10.99
+ Operation type  = Random numbers generated
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 2025
+
+
+ IS Benchmark Completed
+ Class           =                        A
+ Size            =                  8388608
+ Iterations      =                       10
+ Time in seconds =                     5.53
+ Total processes =                        1
+ Active processes=                        1
+ Mop/s total     =                    15.17
+ Mop/s/process   =                    15.17
+ Operation type  =              keys ranked
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              11 Jul 2025
+
+
+ MG Benchmark Completed.
+ Class           =                        A
+ Size            =            256x 256x 256
+ Iterations      =                        4
+ Time in seconds =                    22.85
+ Total processes =                        1
+ Active processes=                        1
+ Mop/s total     =                   170.35
+ Mop/s/process   =                   170.35
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              03 Jul 2025

@@ -1,41 +1,41 @@
-﻿Description,Category,Benchmark,Small BOOM,Medium BOOM,Large BOOM,Banana Pi Sim Model,MILK-V Sim Model,Banana Pi Hardware,MILK-V Hardware
-Completely Biased Branch,Control Flow,Cca,25,17,17,32,16,21,17
-Easy to predict Control Flow (alternating branches),Control Flow,Cce,38,21,15,62,17,31,18
-Random Control Flow -- Impossible to predict,Control Flow,CCh,936,757,653,940,644,710,606
-Impossible to predict control + interaction with stores,Control Flow,CCh_st,53,32,24,69,24,52,32
-Impossible control with large basic blocks (potentially larger penalty),Control Flow,CCl,63,33,29,77,29,42,37
-Heavily Biased Branches,Control Flow,CCm,30,18,17,37,17,22,17
-Inlining Test for functions containing loops.,Control Flow,CF1,18,17,13,33,13,22,19
-Recursive Control Flow -- 1000 Deep,Control Flow,CRd,43865,36870,17020,57830,16065,37062,28723
-Recursive control flow - Fibonacci,Control Flow,CRf,83,46,33,110,32,76,54
-Merge sort,Control Flow,CRm,,,,,,,
-Switch Case Statement of size 10 -- Different Case each time,Control Flow,CS1,9,7,6,7,8,5,6
-Switch Case Statement of Size 10 -- Different case every third time,Control Flow,CS3,66,63,154,57,44,58,50
-Simple Data Parallel Loop - Double Arithmetic,Data,DP1d,281,257,205,468,178,412,183
-Simple Data Parallel Loop -- Float Arithmetic,Data,DP1f,141,130,105,247,83,184,90
-Simple Data Parallel Loop -- sin() computation,Data,DPT,209,188,128,183,128,139,122
-Simple Data Parallel Loop -- double sin() computation,Data,DPTd,102,94,58,77,60,61,55
-Simple Data Parallel Loop -- Simple Data PArallel Loop Float/Double Conversion,Data,DPcvt,26,21,17,66,14,55,21
-Integer Execution -- Length 1 Dependency Chain per Iteration,Execution,ED1,17,15,15,16,15,10,13
-Floating-point Execution -- 8 Independent instructions per Iteration,Execution,EF,22,17,17,26,17,17,10
-Integer Execution -- 8 Independent computations per iteration ,Execution,EI,17,9,7,21,7,17,9
-Integer Execution -- Length 1 Dependency Chain each loop (with multiplies),Execution,EM1,13,13,13,12,12,8,8
-Integer Execution -- Length 5 Dependency Chain each loop (with multiplies),Execution,EM5,17,16,16,57,16,17,10
-Conflict Misses (tune to your cache arch. by adding more streams),Cache,MC,385,329,267,795,265,199,120
-Confict Misses with Stores (tune to your cache arch),Cache,MCS,1489,1725,391,1152,324,1715,115
-Cache resident Linked List Traversal,Cache,MD,78,79,64,66,58,39,22
-"8 Streams of independent memory access, all cache resident.",Cache,MI,88,48,43,112,41,83,41
-"8 Streams independent memory access, no conflicts",Cache,MIM,98,77,64,112,65,238,77
-8 Streams independent Memory Access -- 2 coalescing ops per iteration,Cache,MIM2,99,75,64,113,65,231,74
-Large Instruction Region -- Instruction cache Misses,Cache,MIP,76,79,67,114,68,121,213
-L2 resident (depending on LFSR settings) linked list traversal,Cache,ML2,991,867,825,1303,828,1829,801
-L2 Resident linked list traversal -- B/W limited (loads),Cache,ML2_BW_ld,564,400,427,860,429,1213,397
-L2 Resident linked-list traversal -- B/W Limited (load/stores),Cache,ML2_BW_ldst,3113,3003,2562,4272,1863,7081,2080
-L2 resident linked list traversal -- B/W limited (stores),Cache,ML2_BW_st,1964,4499,1888,2216,1518,2415,1408
-L2 resident linked list traversal (stores),Cache,ML2_st,3531,6212,3162,6179,2835,11319,4227
-"Repeatedly store, L2 Cache Resident",Cache,STL2,1787,5934,1386,1573,936,1355,1194
-"Repeatedly Store, L2 Resident (occasional stores)",Cache,STL2b,1740,5754,1252,1932,1221,5745,1101
-Repeatedly Store in consecutive access - L1 Cache,Cache,STc,39,24,15,50,16,30,27
-Load Store Access with Differeing dynamic dependences,Cache,M_Dyn,373,389,301,370,235,382,254
-Non-cache resident linked-list traversal,Memory,MM,6153,10365,6245,4290,3205,1511,1391
-Non-cache resident linked-list traversal (with stores),Memory,MM_st,7941,12603,7551,4531,2997,1689,843
+﻿Description,Category,Benchmark,Small BOOM,Medium BOOM,Large BOOM,Banana Pi Sim Model,Fast Banana Pi Sim Model,MILK-V Sim Model,Banana Pi Hardware,MILK-V Hardware
+Completely Biased Branch,Control Flow,Cca,25,17,17,32,16,16,21,17
+Easy to predict Control Flow (alternating branches),Control Flow,Cce,38,21,15,62,31,17,31,18
+Random Control Flow -- Impossible to predict,Control Flow,CCh,936,757,653,940,464,644,710,606
+Impossible to predict control + interaction with stores,Control Flow,CCh_st,53,32,24,69,36,24,52,32
+Impossible control with large basic blocks (potentially larger penalty),Control Flow,CCl,63,33,29,77,39,29,42,37
+Heavily Biased Branches,Control Flow,CCm,30,18,17,37,18,17,22,17
+Inlining Test for functions containing loops.,Control Flow,CF1,18,17,13,33,21,13,22,19
+Recursive Control Flow -- 1000 Deep,Control Flow,CRd,43865,36870,17020,57830,28916,16065,37062,28723
+Recursive control flow - Fibonacci,Control Flow,CRf,83,46,33,110,56,32,76,54
+Merge sort,Control Flow,CRm,,,,,,,,
+Switch Case Statement of size 10 -- Different Case each time,Control Flow,CS1,9,7,6,7,4,8,5,6
+Switch Case Statement of Size 10 -- Different case every third time,Control Flow,CS3,66,63,154,57,30,44,58,50
+Simple Data Parallel Loop - Double Arithmetic,Data,DP1d,281,257,205,468,286,178,412,183
+Simple Data Parallel Loop -- Float Arithmetic,Data,DP1f,141,130,105,247,142,83,184,90
+Simple Data Parallel Loop -- sin() computation,Data,DPT,209,188,128,183,96,128,139,122
+Simple Data Parallel Loop -- double sin() computation,Data,DPTd,102,94,58,77,39,60,61,55
+Simple Data Parallel Loop -- Simple Data PArallel Loop Float/Double Conversion,Data,DPcvt,26,21,17,66,36,14,55,21
+Integer Execution -- Length 1 Dependency Chain per Iteration,Execution,ED1,17,15,15,16,9,15,10,13
+Floating-point Execution -- 8 Independent instructions per Iteration,Execution,EF,22,17,17,26,14,17,17,10
+Integer Execution -- 8 Independent computations per iteration ,Execution,EI,17,9,7,21,11,7,17,9
+Integer Execution -- Length 1 Dependency Chain each loop (with multiplies),Execution,EM1,13,13,13,12,6,12,8,8
+Integer Execution -- Length 5 Dependency Chain each loop (with multiplies),Execution,EM5,17,16,16,57,29,16,17,10
+Conflict Misses (tune to your cache arch. by adding more streams),Cache,MC,385,329,267,795,375,265,199,120
+Confict Misses with Stores (tune to your cache arch),Cache,MCS,1489,1725,391,1152,671,324,1715,115
+Cache resident Linked List Traversal,Cache,MD,78,79,64,66,32,58,39,22
+"8 Streams of independent memory access, all cache resident.",Cache,MI,88,48,43,112,59,41,83,41
+"8 Streams independent memory access, no conflicts",Cache,MIM,98,77,64,112,57,65,238,77
+8 Streams independent Memory Access -- 2 coalescing ops per iteration,Cache,MIM2,99,75,64,113,73,65,231,74
+Large Instruction Region -- Instruction cache Misses,Cache,MIP,76,79,67,114,70,68,121,213
+L2 resident (depending on LFSR settings) linked list traversal,Cache,ML2,991,867,825,1303,634,828,1829,801
+L2 Resident linked list traversal -- B/W limited (loads),Cache,ML2_BW_ld,564,400,427,860,423,429,1213,397
+L2 Resident linked-list traversal -- B/W Limited (load/stores),Cache,ML2_BW_ldst,3113,3003,2562,4272,3399,1863,7081,2080
+L2 resident linked list traversal -- B/W limited (stores),Cache,ML2_BW_st,1964,4499,1888,2216,2927,1518,2415,1408
+L2 resident linked list traversal (stores),Cache,ML2_st,3531,6212,3162,6179,5017,2835,11319,4227
+"Repeatedly store, L2 Cache Resident",Cache,STL2,1787,5934,1386,1573,1586,936,1355,1194
+"Repeatedly Store, L2 Resident (occasional stores)",Cache,STL2b,1740,5754,1252,1932,2012,1221,5745,1101
+Repeatedly Store in consecutive access - L1 Cache,Cache,STc,39,24,15,50,30,16,30,27
+Load Store Access with Differeing dynamic dependences,Cache,M_Dyn,373,389,301,370,322,235,382,254
+Non-cache resident linked-list traversal,Memory,MM,6153,10365,6245,4290,6806,3205,1511,1391
+Non-cache resident linked-list traversal (with stores),Memory,MM_st,7941,12603,7551,4531,7063,2997,1689,843

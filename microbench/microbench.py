@@ -198,7 +198,8 @@ def main():
                     '#AF7AA1',  # Violet
                     '#FF9DA7',  # Soft Pink/Coral
                     '#3B5D5C',  # Dark Slate Teal
-                    '#B03A48']  # Rich Dark Rose
+                    '#B03A48',  # Rich Dark Rose
+                    '#731F2A']  # Deep Crimson / Burnt Rose
 
     bench_labels = ['Small BOOM',  
                     'Medium BOOM', 
@@ -209,7 +210,8 @@ def main():
                     'Rocket 3',  
                     'Banana Pi Hardware',
                     'MILK-V Sim Model',
-                    'Banana Pi Sim Model']  
+                    'Banana Pi Sim Model',
+                    'Fast Banana Pi Sim Model']  
 
     color_dict = dict(zip(bench_labels, bench_colors))
 
@@ -218,31 +220,31 @@ def main():
 
     df['Category'] = '\n\n\n\n\n\n' + df['Category'].astype(str)
 
-    configs = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware', 'MILK-V Hardware']
+    configs = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'Fast Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware', 'MILK-V Hardware']
 
-    plot_cols =  ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware'] 
+    plot_cols =  ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'Fast Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware'] 
     create_plot(df, color_dict, configs, 'MILK-V Hardware', plot_cols, 'Relative Performance to MILK-V Hardware', 'Micro-All.png')
 
-    plot_cols = ['Banana Pi Sim Model']
+    plot_cols = ['Banana Pi Sim Model', 'Fast Banana Pi Sim Model']
     create_plot(df, color_dict, configs, 'Banana Pi Hardware', plot_cols, 'Relative Performance to Banana Pi Hardware', 'Micro-BPi.png')
 
     plot_cols = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'MILK-V Sim Model']
     create_plot(df, color_dict, configs, 'MILK-V Hardware', plot_cols, 'Relative Performance to MILK-V Hardware', 'Micro-MILK-V.png')
 
 
-    plot_cols =  ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware'] 
+    plot_cols =  ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'Fast Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware'] 
     create_split_plot(df, color_dict, configs, 'MILK-V Hardware', plot_cols, 'Relative Performance to MILK-V Hardware', 'Micro-All-Split.png')
 
-    plot_cols = ['Banana Pi Sim Model']
+    plot_cols = ['Banana Pi Sim Model', 'Fast Banana Pi Sim Model']
     create_split_plot(df, color_dict, configs, 'Banana Pi Hardware', plot_cols, 'Relative Performance to Banana Pi Hardware', 'Micro-BPi-Split.png')
 
     plot_cols = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'MILK-V Sim Model']
     create_split_plot(df, color_dict, configs, 'MILK-V Hardware', plot_cols, 'Relative Performance to MILK-V Hardware', 'Micro-MILK-V-Split.png')
 
-    plot_cols =  ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware']  
+    plot_cols =  ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'Fast Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware']  
     create_heatmap(df, configs, 'MILK-V Hardware', plot_cols, 'Micro-MILK-V-Heatmap.png')
 
-    plot_cols = ['Banana Pi Sim Model']
+    plot_cols = ['Banana Pi Sim Model', 'Fast Banana Pi Sim Model']
     create_heatmap(df, configs, 'Banana Pi Hardware', plot_cols, 'Micro-BPi-Heatmap.png')
 
     plot_cols = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'MILK-V Sim Model']

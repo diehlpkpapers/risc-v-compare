@@ -46,26 +46,32 @@ def create_split_plot(df, color_dict, configs, normalized_key, plot_cols, y_labe
 
     color_dict_filtered = {key: color_dict[key] for key in plot_cols}
 
-    df_normalized_top = df_normalized[(df_normalized['Category'] == '\n\n\n\n\nControl Flow') | (df_normalized['Category'] == '\n\n\n\n\nData') | (df_normalized['Category'] == '\n\n\n\n\nExecution')]
-    df_normalized_bottom = df_normalized[(df_normalized['Category'] == '\n\n\n\n\nCache') | (df_normalized['Category'] == '\n\n\n\n\nMemory')]
+    df_normalized_top = df_normalized[(df_normalized['Category'] == '\n\n\n\n\n\nControl Flow') | (df_normalized['Category'] == '\n\n\n\n\n\nData') | (df_normalized['Category'] == '\n\n\n\n\n\nExecution')]
+    df_normalized_bottom = df_normalized[(df_normalized['Category'] == '\n\n\n\n\n\nCache') | (df_normalized['Category'] == '\n\n\n\n\n\nMemory')]
 
-    fig, axes = plt.subplots(2, 1, figsize=(25, 12))
-    fig.suptitle('Microbenchmark Relative Performance to ' + normalized_key, fontsize=20, fontweight='bold')
+    df_normalized_top['Category'] = df['Category'].str.replace(r'^\n', '', n=1, regex=True)
+
+    fig, axes = plt.subplots(2, 1, figsize=(25, 12), sharey=True, constrained_layout=True)
+    fig.suptitle('Microbenchmark Relative Performance to ' + normalized_key, fontsize=28, fontweight='bold')
+    fig.supylabel(y_label, va='center', rotation='vertical', fontsize=20, fontweight='bold')
 
     ax1 = df_normalized_top.plot.bar(x='Benchmark', y=plot_cols, color=color_dict_filtered, width=0.9, ax=axes[0])
     ax1.axhline(y=1.0, color='k', linestyle='--', label=normalized_key)
 
-    ax1.legend()
-
     handles, labels = ax1.get_legend_handles_labels()
     reordered_handles = handles[1:] + [handles[0]]
     reordered_labels = labels[1:] + [labels[0]]
-    ax1.legend(reordered_handles, reordered_labels)
+    ax1.legend(reordered_handles, reordered_labels, fontsize=18, ncol=len(reordered_labels))
+
+    #if ax1.get_legend():
+    #    ax1.get_legend().remove()
 
     ylim_cutoff = 2.0
 
     ax1.set(xlabel=None)
     ax1.set_ylim(0, ylim_cutoff)
+    ax1.tick_params(axis='x', labelsize=18)
+    ax1.tick_params(axis='y', labelsize=18)
 
     for container in ax1.containers:
         for bar in container.patches:
@@ -75,35 +81,29 @@ def create_split_plot(df, color_dict, configs, normalized_key, plot_cols, y_labe
                         ylim_cutoff,
                         f'{height:.2f}  ',
                         ha='center', va='bottom',
-                        color='black', fontsize=12, rotation=270)
+                        color='black', fontsize=16, rotation=270)
 
     sec = ax1.secondary_xaxis(location=0)
     sec.set_xticks([4.5, 13, 18], labels=df_normalized_top['Category'].unique())
 
     sec2 = ax1.secondary_xaxis(location=0)
     sec2.set_xticks([-0.5, 10.5, 15.5, 20.5], labels=[])
-    sec2.tick_params('x', length=100, width=1.5)
+    sec2.tick_params('x', length=150, width=1.5)
 
     for label in sec.get_xticklabels():
-        label.set_fontsize(14)
+        label.set_fontsize(18)
         label.set_fontweight('bold')
-
-    ax1.set_ylabel(y_label, fontsize=14, fontweight='bold')
 
     ax2 = df_normalized_bottom.plot.bar(x='Benchmark', y=plot_cols, color=color_dict_filtered, width=0.9, ax=axes[1])
     ax2.axhline(y=1.0, color='k', linestyle='--', label=normalized_key)
 
-    ax2.legend()
-
-    handles, labels = ax2.get_legend_handles_labels()
-    reordered_handles = handles[1:] + [handles[0]]
-    reordered_labels = labels[1:] + [labels[0]]
-    ax2.legend(reordered_handles, reordered_labels)
-
-    ylim_cutoff = 2.0
+    if ax2.get_legend():
+        ax2.get_legend().remove()
 
     ax2.set(xlabel=None)
     ax2.set_ylim(0, ylim_cutoff)
+    ax2.tick_params(axis='x', labelsize=18)
+    ax2.tick_params(axis='y', labelsize=18)
 
     for container in ax2.containers:
         for bar in container.patches:
@@ -113,22 +113,19 @@ def create_split_plot(df, color_dict, configs, normalized_key, plot_cols, y_labe
                         ylim_cutoff,
                         f'{height:.2f}  ',
                         ha='center', va='bottom',
-                        color='black', fontsize=12, rotation=270)
+                        color='black', fontsize=16, rotation=270)
 
+    ax2.legend
     sec3 = ax2.secondary_xaxis(location=0)
     sec3.set_xticks([8, 16.5], labels=df_normalized_bottom['Category'].unique())
 
     sec4 = ax2.secondary_xaxis(location=0)
     sec4.set_xticks([-0.5, 15.5, 17.5], labels=[])
-    sec4.tick_params('x', length=100, width=1.5)
+    sec4.tick_params('x', length=150, width=1.5)
 
     for label in sec3.get_xticklabels():
-        label.set_fontsize(14)
+        label.set_fontsize(18)
         label.set_fontweight('bold')
-
-    ax2.set_ylabel(y_label, fontsize=14, fontweight='bold')
-
-    plt.tight_layout()
 
     plt.savefig(fig_name, bbox_inches='tight')
     plt.show()
@@ -219,14 +216,14 @@ def main():
     df = pd.read_csv('microbench.csv')
     df = df[df['Benchmark'] != 'CRm']
 
-    df['Category'] = '\n\n\n\n\n' + df['Category'].astype(str)
+    df['Category'] = '\n\n\n\n\n\n' + df['Category'].astype(str)
 
     configs = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware', 'MILK-V Hardware']
 
     plot_cols =  ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware'] 
     create_plot(df, color_dict, configs, 'MILK-V Hardware', plot_cols, 'Relative Performance to MILK-V Hardware', 'Micro-All.png')
 
-    plot_cols = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model']
+    plot_cols = ['Banana Pi Sim Model']
     create_plot(df, color_dict, configs, 'Banana Pi Hardware', plot_cols, 'Relative Performance to Banana Pi Hardware', 'Micro-BPi.png')
 
     plot_cols = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'MILK-V Sim Model']
@@ -236,7 +233,7 @@ def main():
     plot_cols =  ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware'] 
     create_split_plot(df, color_dict, configs, 'MILK-V Hardware', plot_cols, 'Relative Performance to MILK-V Hardware', 'Micro-All-Split.png')
 
-    plot_cols = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model']
+    plot_cols = ['Banana Pi Sim Model']
     create_split_plot(df, color_dict, configs, 'Banana Pi Hardware', plot_cols, 'Relative Performance to Banana Pi Hardware', 'Micro-BPi-Split.png')
 
     plot_cols = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'MILK-V Sim Model']
@@ -245,7 +242,7 @@ def main():
     plot_cols =  ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model', 'MILK-V Sim Model', 'Banana Pi Hardware']  
     create_heatmap(df, configs, 'MILK-V Hardware', plot_cols, 'Micro-MILK-V-Heatmap.png')
 
-    plot_cols = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'Banana Pi Sim Model']
+    plot_cols = ['Banana Pi Sim Model']
     create_heatmap(df, configs, 'Banana Pi Hardware', plot_cols, 'Micro-BPi-Heatmap.png')
 
     plot_cols = ['Small BOOM', 'Medium BOOM', 'Large BOOM', 'MILK-V Sim Model']

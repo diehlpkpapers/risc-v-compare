@@ -1,0 +1,81 @@
+ubuntu@ubuntu:~/microbench$ for dir in */; do if [ -d "$dir" ]; then echo $dir; cd $dir; ./bench.RISCV; cd ..; fi; done
+CCa/
+_ticks: 16
+CCe/
+_ticks: 31
+CCh/
+_ticks: 464
+CCh_st/
+_ticks: 36
+CCl/
+_ticks: 39
+CCm/
+_ticks: 18
+CF1/
+_ticks: 21
+CRd/
+_ticks: 28916
+CRf/
+_ticks: 56
+CRm/
+Segmentation fault (core dumped)
+CS1/
+_ticks: 4
+CS3/
+_ticks: 30
+DP1d/
+_ticks: 286
+DP1f/
+_ticks: 142
+DPT/
+_ticks: 96
+DPTd/
+_ticks: 39
+DPcvt/
+_ticks: 36
+ED1/
+_ticks: 9
+EF/
+_ticks: 14
+EI/
+_ticks: 11
+EM1/
+_ticks: 6
+EM5/
+_ticks: 29
+MC/
+_ticks: 375
+MCS/
+_ticks: 671
+MD/
+_ticks: 32
+MI/
+_ticks: 59
+MIM/
+_ticks: 57
+MIM2/
+_ticks: 73
+MIP/
+_ticks: 70
+ML2/
+_ticks: 634
+ML2_BW_ld/
+_ticks: 423
+ML2_BW_ldst/
+_ticks: 3399
+ML2_BW_st/
+_ticks: 2927
+ML2_st/
+_ticks: 5017
+MM/
+_ticks: 6806
+MM_st/
+_ticks: 7063
+M_Dyn/
+_ticks: 322
+STL2/
+_ticks: 1586
+STL2b/
+_ticks: 2012
+STc/
+_ticks: 30

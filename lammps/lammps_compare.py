@@ -19,17 +19,17 @@ cpu_cores = ["Banana Pi", "Rocket", "MILK-V", "BOOM"]
 # Lammps Runtimes for LJ benchmark
 values = np.array([
     # Chain["Banana Pi", "Rocket", "MILK-V", "BOOM"],
-    [100, 55, 4, 21],   # 1-rank
-    [100, 28, 2, 11],   # 2-rank
-    [100, 15, 1, 5]    # 4-rank
+    [13, 55, 4, 21],   # 1-rank
+    [8, 28, 2, 11],   # 2-rank
+    [4, 15, 1, 5]    # 4-rank
 ])
 
 # Lammps Runtimes for Chain benchmark
 values = np.array([
     # Chain["Banana Pi", "Rocket", "MILK-V", "BOOM"],
-    [100, 28, 4, 13],   # 1-rank
-    [100, 18, 2, 9],   # 2-rank
-    [100, 12, 1, 7]    # 4-rank
+    [9, 28, 4, 13],   # 1-rank
+    [5, 18, 2, 9],   # 2-rank
+    [4, 12, 1, 7]    # 4-rank
 ])
 
 # Parameters
